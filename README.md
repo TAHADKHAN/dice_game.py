@@ -2,15 +2,20 @@
 "A simple Python dice game where players roll dice to score points in a fun, interactive command-line interface."
 # Python Dice Game
 
-A simple Python dice game where players roll dice to score points in a fun, interactive command-line interface.
+import random
 
-## Features
+def roll_dice():
+    return random.randint(1,6)
 
-- Roll a pair of dice.
-- Score points based on the roll.
-- Play against yourself or others.
-- Simple command-line interface for easy interaction.
-
-## Requirements
-
-- Python 3.x
+def main():
+    while 'True':
+        roll = input("rolled the dice? (yes/no):").strip().lower()
+        if roll == 'yes':
+            print(f"you rolled a {roll_dice()}!")
+        elif roll == 'no':
+            print("goodbye!")   
+            break
+        else: 
+            print("invalid in put please enter 'yes' or 'no'.")
+if __name__ == "__main__":
+    main()                
